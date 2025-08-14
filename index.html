@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeXStudio</title>
-      <!-- Google Fonts: Montserrat y Poppins -->
+
+    <!-- Google Fonts: Montserrat y Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Tu CSS principal -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon / Logo -->
+    <link rel="icon" href="ruta-de-tu-logo.png" type="image/png">
+
+    <!-- Font Awesome (última versión oficial CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-bxBmTP3krmB+vE8TR5m+ftI3kN3Z3E0ZyIY05R+eM8WX+g2f8mYnH7gRKH9O1pGvHcZ3vSHL6h1L67Wl7V4EYg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
 <div class="modo-carga">
@@ -62,7 +72,48 @@
         <p>Pasamos a la acción: diseñamos, programamos y optimizamos tu proyecto. Te mantenemos informado en cada etapa y, una vez listo, te lo entregamos funcionando al 100%, listo para brillar.</p>
     </div>
 </section>
+<section id="tecnologias" class="tecnologias">
+    <canvas id="particulas"></canvas>
+    <div class="tecnologias-container">
+        <h2>Tecnologías que se usan</h2>
+        <div class="tech-grid">
+            <div class="tech-card"><i class="fab fa-html5"></i><span>HTML5</span></div>
+            <div class="tech-card"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tech-card"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+            <div class="tech-card"><i class="fab fa-react"></i><span>React</span></div>
+            <div class="tech-card"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+            <div class="tech-card"><i class="fab fa-sass"></i><span>Sass</span></div>
+            <div class="tech-card"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+            <div class="tech-card"><i class="fab fa-git-alt"></i><span>Git</span></div>
+            <div class="tech-card"><i class="fab fa-npm"></i><span>NPM</span></div>
+            <div class="tech-card"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+            <div class="tech-card"><i class="fab fa-angular"></i><span>Angular</span></div>
+            <div class="tech-card"><i class="fas fa-database"></i><span>SQL</span></div>
+        </div>
+    </div>
+</section>
 
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particulas", {
+    "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#f6e58d" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5 },
+        "size": { "value": 3 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#f6e58d", "opacity": 0.3, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+        "modes": { "grab": { "distance": 150, "line_linked": { "opacity": 0.5 } }, "push": { "particles_nb": 4 } }
+    },
+    "retina_detect": true
+});
+</script>
 
 
     <script src="script.js"></script>

@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     font-size: 16px;
     transition: background-color 0.5s ease, color 0.5s ease;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,6 +34,10 @@ a {
     transition: color 0.5s ease;
 }
 
+a:hover {
+    color: #1d6fa5;
+}
+
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -41,7 +46,10 @@ a {
 
 .dark-mode h1, 
 .dark-mode h2, 
-.dark-mode h3 {
+.dark-mode h3,
+.dark-mode h4, 
+.dark-mode h5,
+.dark-mode h6 {
     color: #f5f5f5;
 }
 
@@ -51,6 +59,10 @@ a {
 
 .dark-mode a {
     color: #64b5f6;
+}
+
+.dark-mode a:hover {
+    color: #42a5f5;
 }
 
 .modo-carga {
@@ -64,10 +76,13 @@ a {
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .modo-carga.oculto {
     opacity: 0;
+    pointer-events: none;
 }
 
 .cortina {
@@ -126,11 +141,13 @@ a {
     border: none;
     cursor: pointer;
     border-radius: 6px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    z-index: 10000;
 }
 
 #dark-mode-toggle:hover {
     background-color: #222;
+    transform: scale(1.05);
 }
 
 .container {
@@ -140,6 +157,7 @@ a {
     padding: 2rem;
     gap: 2rem;
     flex-wrap: wrap;
+    transition: all 0.3s ease;
 }
 
 .texto {
@@ -156,28 +174,123 @@ a {
     margin-bottom: 1.5rem;
 }
 
+/* BOTÓN PERSONALIZADO CON BORDE ANIMADO */
 .texto button {
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
+    width: 220px;
+    height: 70px;
+    background: linear-gradient(to left top, #3498db 50%, #1d6fa5 50%);
     border: none;
-    background-color: #3498db;
-    color: white;
-    border-radius: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    outline: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    transition: all 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.texto button span {
+    position: absolute;
+    display: block;
+}
+
+.texto button span:nth-child(1){
+    height: 3px;
+    width: 220px;
+    top:0;
+    left:-220px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    animation: span1 2s linear infinite;
+}
+
+@keyframes span1 {
+    0% { left: -220px; }
+    100% { left: 220px; }
+}
+
+.texto button span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    animation: span2 2s linear infinite;
+}
+
+@keyframes span2 {
+    0% { top: -70px; }
+    100% { top: 70px; }
+}
+
+.texto button span:nth-child(3){
+    height: 3px;
+    width: 220px;
+    right:-220px;
+    bottom: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    animation: span3 2s linear infinite;
+}
+
+@keyframes span3 {
+    0% { right:-220px; }
+    100% { right: 220px; }
+}
+
+.texto button span:nth-child(4){
+    height: 70px;
+    width: 3px;
+    bottom:-70px;
+    left:0;
+    background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    animation: span4 2s linear infinite;
+}
+
+@keyframes span4 {
+    0% { bottom: -70px; }
+    100% { bottom: 70px; }
 }
 
 .texto button:hover {
-    background-color: #1d6fa5;
+    transform: rotate(-3deg) scale(1.1);
+    box-shadow: 0px 4px 12px rgba(0,0,0,.3);
+}
+
+.texto button:hover span {
+    animation-play-state: paused;
 }
 
 .dark-mode .texto button {
-    background-color: #64b5f6;
+    background: linear-gradient(to left top, #64b5f6 50%, #42a5f5 50%);
     color: #121212;
 }
 
-.dark-mode .texto button:hover {
-    background-color: #42a5f5;
+.dark-mode .texto button span:nth-child(1){
+    background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
+}
+
+.dark-mode .texto button span:nth-child(2){
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
+}
+
+.dark-mode .texto button span:nth-child(3){
+    background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
+}
+
+.dark-mode .texto button span:nth-child(4){
+    background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
 }
 
 .galeria {
@@ -186,12 +299,19 @@ a {
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .galeria img {
     width: calc(50% - 0.5rem);
     border-radius: 10px;
     object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .proceso {
@@ -208,11 +328,12 @@ a {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .paso:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .paso h2 {
@@ -236,4 +357,172 @@ a {
 
 .dark-mode .paso p {
     color: #cfcfcf;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .galeria img {
+        width: 100%;
+    }
+
+    .texto h1 {
+        font-size: 2rem;
+    }
+
+    .texto p {
+        font-size: 1rem;
+    }
+
+    .texto button {
+        width: 100%;
+    }
+
+    .paso {
+        flex: 1 1 100%;
+    }
+}
+
+a, button, .paso, .galeria img {
+    will-change: transform, box-shadow, opacity;
+}
+
+.tecnologias {
+    position: relative;
+    width: 100%;
+    padding: 6rem 2rem;
+    background-color: #fefefe;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark-mode .tecnologias {
+    background-color: #121212;
+}
+
+#particulas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.tecnologias-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.tecnologias-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #111;
+    transition: color 0.5s ease;
+}
+
+.dark-mode .tecnologias-container h2 {
+    color: #f5f5f5;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.tech-card {
+    background-color: #ffffff;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+    cursor: default;
+    position: relative;
+}
+
+.dark-mode .tech-card {
+    background-color: #1e1e1e;
+}
+
+.tech-card i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .tech-card i {
+    color: #64b5f6;
+}
+
+.tech-card span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111;
+    transition: color 0.5s ease;
+}
+
+.dark-mode .tech-card span {
+    color: #f5f5f5;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.tech-card:hover i {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@media (max-width: 768px) {
+    .tecnologias {
+        padding: 4rem 1rem;
+    }
+
+    .tecnologias-container h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .tech-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .tech-card i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-grid {
+        gap: 1.5rem;
+    }
+
+    .tech-card i {
+        font-size: 2rem;
+    }
+
+    .tech-card span {
+        font-size: 1rem;
+    }
 }

@@ -1,9 +1,13 @@
 window.addEventListener("load", () => {
     const modoCarga = document.querySelector(".modo-carga");
+
+    
     setTimeout(() => {
         modoCarga.classList.add("desaparecer");
+
+       
         setTimeout(() => modoCarga.remove(), 800);
-    }, 1500); 
+    }, 1000); 
 });
 
 

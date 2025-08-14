@@ -1,3 +1,6 @@
+
+
+
 window.addEventListener("load", () => {
     const modoCarga = document.querySelector(".modo-carga");
     if (!modoCarga) return;

@@ -10,7 +10,7 @@ body {
     background-color: #fefefe;
     line-height: 1.6;
     font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -18,24 +18,25 @@ h1, h2, h3, h4, h5, h6 {
     color: #111;
     margin-bottom: 1rem;
     line-height: 1.2;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 
 p {
     margin-bottom: 1rem;
     color: #444;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 
 a {
     text-decoration: none;
     color: #3498db;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
 }
 
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .dark-mode h1, 
@@ -61,6 +62,12 @@ a {
     z-index: 9999;
     pointer-events: none;
     overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.modo-carga.oculto {
+    opacity: 0;
 }
 
 .cortina {
@@ -185,4 +192,48 @@ a {
     width: calc(50% - 0.5rem);
     border-radius: 10px;
     object-fit: cover;
+}
+
+.proceso {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.paso {
+    flex: 1 1 300px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease;
+}
+
+.paso:hover {
+    transform: translateY(-5px);
+}
+
+.paso h2 {
+    color: #111;
+    margin-bottom: 0.8rem;
+    transition: color 0.5s ease;
+}
+
+.paso p {
+    color: #444;
+    transition: color 0.5s ease;
+}
+
+.dark-mode .paso {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .paso h2 {
+    color: #f5f5f5;
+}
+
+.dark-mode .paso p {
+    color: #cfcfcf;
 }

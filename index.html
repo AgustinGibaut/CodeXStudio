@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeXStudio</title>
+    <title>CodeXStudio | Desarrollo Web y Soluciones Digitales</title>
 
     <!-- Google Fonts: Montserrat y Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- Favicon / Logo -->
-    <link rel="icon" href="logo/code x studio logo.png" type="logo/code x studio logo.png">
+    <link rel="icon" href="logo/code x studio logo.png" type="image/png">
 
     <!-- Font Awesome (última versión oficial CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-bxBmTP3krmB+vE8TR5m+ftI3kN3Z3E0ZyIY05R+eM8WX+g2f8mYnH7gRKH9O1pGvHcZ3vSHL6h1L67Wl7V4EYg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,23 +20,28 @@
 
 <body>
 
+<!-- Pantalla de carga -->
 <div class="modo-carga">
     <div class="cortina top"></div>
     <div class="cortina bottom"></div>
 </div>
 
+<!-- Barra de navegación -->
 <nav>
-    <h1>CodeXStudio</h1>
+    <h1 class="logo-text">CodeXStudio</h1>
 </nav>
 
+<!-- Botón modo oscuro -->
 <div class="dark-mode">
     <button id="dark-mode-toggle">
-        dark mode
+        Dark Mode
     </button>
 </div>
+
+<!-- Sección de bienvenida -->
 <div class="container">
     <div class="texto">
-        <h1>Bienvenido a CodeXStudio</h1>
+        <h1>Bienvenido a <span>CodeXStudio</span></h1>
         <p>
             En <strong>CodeXStudio</strong> nos especializamos en el desarrollo de 
             soluciones digitales modernas: desde sitios web dinámicos y 
@@ -58,44 +63,63 @@
     </div>
 </div>
 
-
-
+<!-- Sección descubre -->
 <section id="section3" class="section">
     <div class="section-content">
         <!-- Logo -->
-        <img src="logo/logo.png"  width="400px"   alt="Logo de CodeXStudio" class="logo">
-        <h1>Descubre CodeXStudio</h1>
-        <p>En CodeXStudio nos especializamos en el desarrollo de sitios web y aplicaciones a medida. 
-        Transformamos ideas en soluciones digitales funcionales y modernas, ayudando a empresas 
-        a crecer y destacarse en el mundo online.</p>
+        <img src="logo/logov.png" width="400" alt="Logo de CodeXStudio" class="logo">
+        <h2>Descubre CodeXStudio</h2>
+        <p>
+            En CodeXStudio nos especializamos en el desarrollo de sitios web y aplicaciones a medida. 
+            Transformamos ideas en soluciones digitales funcionales y modernas, ayudando a empresas 
+            a crecer y destacarse en el mundo online.
+        </p>
         <a href="#contact" class="btn-join">Solicita tu Proyecto</a>
     </div>
 </section>
 
-
+<!-- Sección proceso -->
 <section class="proceso">
     <div class="paso">
         <h2>1 — Contacto</h2>
-        <p>El primer paso es ponernos en contacto. Nos cuentas tu idea, tus objetivos y cualquier detalle importante que quieras que tengamos en cuenta. Queremos entender tu visión antes de dar el siguiente paso.</p>
+        <p>
+            El primer paso es ponernos en contacto. Nos cuentas tu idea, tus objetivos y cualquier detalle importante que quieras que tengamos en cuenta. Queremos entender tu visión antes de dar el siguiente paso.
+        </p>
     </div>
     <div class="paso">
         <h2>2 — Análisis</h2>
-        <p>Analizamos tu proyecto a fondo, identificando las necesidades, el público objetivo y las mejores soluciones tecnológicas. Aquí definimos la estrategia y el plan de acción para que todo vaya sobre ruedas.</p>
+        <p>
+            Analizamos tu proyecto a fondo, identificando las necesidades, el público objetivo y las mejores soluciones tecnológicas. Aquí definimos la estrategia y el plan de acción para que todo vaya sobre ruedas.
+        </p>
     </div>
     <div class="paso">
         <h2>3 — Desarrollo y Entrega</h2>
-        <p>Pasamos a la acción: diseñamos, programamos y optimizamos tu proyecto. Te mantenemos informado en cada etapa y, una vez listo, te lo entregamos funcionando al 100%, listo para brillar.</p>
+        <p>
+            Pasamos a la acción: diseñamos, programamos y optimizamos tu proyecto. Te mantenemos informado en cada etapa y, una vez listo, te lo entregamos funcionando al 100%, listo para brillar.
+        </p>
     </div>
 </section>
 
 
-
-
-
-
+<!-- Sección de testimonios -->
+<section id="testimonios" class="section testimonios">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonios-container">
+        <div class="testimonio">
+            <p>"Gracias a CodeXStudio, nuestra web creció en tráfico y ventas en un tiempo récord."</p>
+            <h4>- Laura Pérez</h4>
+            <button class="btn-testimonio">Ver Proyecto</button>
+        </div>
+        <div class="testimonio">
+            <p>"Profesionales y creativos. Superaron nuestras expectativas con creces."</p>
+            <h4>- Juan Torres</h4>
+            <button class="btn-testimonio">Ver Proyecto</button>
+        </div>
+    </div>
 </section>
 
 
-    <script src="script.js"></script>
+<!-- Script principal -->
+<script src="script.js"></script>
 </body>
 </html>

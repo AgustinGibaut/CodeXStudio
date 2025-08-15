@@ -39,3 +39,5 @@ const observer3 = new IntersectionObserver((entries, observer) => {
 
 
 observer3.observe(section3Content);
+
+

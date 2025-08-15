@@ -454,6 +454,35 @@ a, button, .paso, .galeria img {
     display: block;
 }
 
+@keyframes rgbBorderFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.paso {
+    position: relative;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 12px;
+    background: white; 
+    border: 4px solid transparent;
+    background-image: linear-gradient(white, white), 
+        linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-size: 300% 300%;
+    animation: rgbBorderFlow 6s linear infinite;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.paso:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
 
 .btn-join span:nth-child(1){height:3px;width:220px;top:0;left:-220px;background:linear-gradient(to right, rgba(0,0,0,0), #f6e58d);animation: span1 2s linear infinite;}
 @keyframes span1 {0%{left:-220px;}100%{left:220px;}}
@@ -472,3 +501,108 @@ a, button, .paso, .galeria img {
 
 .dark-mode .btn-join {background: linear-gradient(to left top, #64b5f6 50%, #42a5f5 50%); color: #121212;}
 
+.testimonios {
+    padding: 4rem 2rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.testimonios-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.testimonio {
+    flex: 1 1 300px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+}
+
+.testimonio.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.testimonio:hover {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    transform: translateY(-5px) scale(1.03);
+}
+
+.btn-testimonio {
+    margin-top: 1rem;
+    background: linear-gradient(to left top, #3498db 50%, #1d6fa5 50%);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-testimonio:hover {
+    transform: scale(1.08);
+    background: linear-gradient(to left top, #42a5f5 50%, #1d6fa5 50%);
+}
+
+.dark-mode .testimonio {
+    background: #1e1e1e;
+    color: #f5f5f5;
+}
+
+.dark-mode .btn-testimonio {
+    background: linear-gradient(to left top, #64b5f6 50%, #42a5f5 50%);
+    color: #121212;
+}
+
+@keyframes rgbBorderFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.testimonio {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+    background: white;
+    border: 4px solid transparent;
+    background-image: linear-gradient(white, white), 
+        linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-size: 300% 300%;
+    animation: rgbBorderFlow 6s linear infinite;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-rgb {
+    position: relative;
+    padding: 0.7rem 1.6rem;
+    color: #000;
+    background: white;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    background-image: linear-gradient(white, white), 
+        linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    background-size: 300% 300%;
+    animation: rgbBorderFlow 5s linear infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-rgb:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

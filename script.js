@@ -41,3 +41,35 @@ const observer3 = new IntersectionObserver((entries, observer) => {
 observer3.observe(section3Content);
 
 
+// Animación de aparición al hacer scroll
+document.addEventListener("scroll", () => {
+    const testimonios = document.querySelectorAll(".testimonio");
+    const triggerBottom = window.innerHeight * 0.85;
+
+    testimonios.forEach(t => {
+        const boxTop = t.getBoundingClientRect().top;
+        if (boxTop < triggerBottom) {
+            t.classList.add("visible");
+        }
+    });
+});
+
+// Movimiento flotante automático
+function animarFlotante() {
+    document.querySelectorAll(".testimonio").forEach((t, index) => {
+        t.style.animation = `flotar ${3 + index}s ease-in-out infinite alternate`;
+    });
+}
+
+animarFlotante();
+
+// Keyframes flotantes
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}`;
+document.head.appendChild(style);
+
+
